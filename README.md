@@ -1,3 +1,14 @@
-# A Quickstart Guide for Django and Django REST Framework Packages
+```Django Jazzmin``` documentation: https://django-jazzmin.readthedocs.io/
 
-For more information, please refer to the official ```Django``` documentation: https://docs.djangoproject.com/en/stable/
+Welcome to Jazzmin, intended as a drop-in app to jazz up your django admin site, with plenty of things you can easily customise, including a built-in UI customizer
+
+### Installation
+
+Install using `pip install django-jazzmin`
+
+Add `jazzmin` to your `INSTALLED_APPS` setting.
+```python
+INSTALLED_APPS = [
+    'jazzmin',  # Add this before 'django.contrib.admin'
+]
+```
