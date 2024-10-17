@@ -7,7 +7,7 @@ migrate:
 run:
 	python3 manage.py runserver 8000
 cru:
-	python manage.py createsuperuser
+	python manage.py createsuperuser --username=goldendev --email=goldendevuz@gmail.com
 i:
 	pip install -r requirements.txt
 freeze:
