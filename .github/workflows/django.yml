@@ -2,9 +2,9 @@ name: Django CI
 
 on:
   push:
-    branches: [ "drf" ]
+    branches: [ "drf-redesign" ]
   pull_request:
-    branches: [ "drf" ]
+    branches: [ "drf-redesign" ]
 
 jobs:
   build:
