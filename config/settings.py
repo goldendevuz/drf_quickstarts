@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # ...,
+    'drf_redesign', # Add this before 'rest_framework'
     'rest_framework',
     'api.apps.ApiConfig'
 ]
