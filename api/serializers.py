@@ -1,19 +1,21 @@
-from rest_framework import serializers
+from rest_framework.serializers import ModelSerializer
 
-from api.models import Author, Book
+from api.models import Author, Book, Chapter
 
 
-class BookSerializer(serializers.ModelSerializer):
-    author_name = serializers.CharField(source='author.name', read_only=True)
+class ChapterSerializer(ModelSerializer):
+    class Meta:
+        model = Chapter
+        fields = '__all__'
 
+
+class BookSerializer(ModelSerializer):
     class Meta:
         model = Book
         fields = '__all__'
 
 
-class AuthorSerializer(serializers.HyperlinkedModelSerializer):
-    books = BookSerializer(many=True, read_only=True)  # Nested BookSerializer to show book details
-
+class AuthorSerializer(ModelSerializer):
     class Meta:
         model = Author
         fields = '__all__'

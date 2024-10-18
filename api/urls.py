@@ -1,16 +1,22 @@
-from django.urls import include, path
 from rest_framework_nested import routers
+from django.urls import path, include
+from .views import AuthorViewSet, BookViewSet, ChapterViewSet
 
-from api import views
+# Create the main router for Author
+router = routers.DefaultRouter()
+router.register(r'authors', AuthorViewSet)
 
-router = routers.SimpleRouter()
-router.register(r'authors', views.AuthorViewSet)
-books_router = routers.NestedSimpleRouter(router, r'authors', lookup='book')
-books_router.register(r'books', views.BookViewSet, basename='author-books')
-# 'basename' is optional. Needed only if the same viewset is registered more than once
-# Official DRF docs on this option: http://www.django-rest-framework.org/api-guide/routers/
+# Create nested routers for Book under Author
+books_router = routers.NestedDefaultRouter(router, r'authors', lookup='author')
+books_router.register(r'books', BookViewSet, basename='author-books')
 
+# Create nested routers for Chapter under Book
+chapters_router = routers.NestedDefaultRouter(books_router, r'books', lookup='book')
+chapters_router.register(r'chapters', ChapterViewSet, basename='book-chapters')
+
+# Include the routers in the urlpatterns
 urlpatterns = [
-    path(r'', include(router.urls)),
-    path(r'', include(books_router.urls)),
+    path('', include(router.urls)),
+    path('', include(books_router.urls)),
+    path('', include(chapters_router.urls)),
 ]
