@@ -1,9 +1,19 @@
-# Serializers define the API representation.
-from django.contrib.auth.models import User
 from rest_framework import serializers
 
+from api.models import Author, Book
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+
+class BookSerializer(serializers.ModelSerializer):
+    author_name = serializers.CharField(source='author.name', read_only=True)
+
     class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'is_staff']
+        model = Book
+        fields = '__all__'
+
+
+class AuthorSerializer(serializers.HyperlinkedModelSerializer):
+    books = BookSerializer(many=True, read_only=True)  # Nested BookSerializer to show book details
+
+    class Meta:
+        model = Author
+        fields = '__all__'

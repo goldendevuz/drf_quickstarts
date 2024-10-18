@@ -1,10 +1,15 @@
-# ViewSets define the view behavior.
-from django.contrib.auth.models import User
 from rest_framework import viewsets
 
-from api.serializers import UserSerializer
+from api.models import Author, Book
+from api.serializers import AuthorSerializer, BookSerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class AuthorViewSet(viewsets.ModelViewSet):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
+
+
+class BookViewSet(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    search_fields = ['title', 'author__name', 'categories__name', 'summary']

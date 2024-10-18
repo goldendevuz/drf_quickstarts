@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Introduction to Django",
+        "publication_date": "2021-05-10T00:00:00+00:00",
+        "author_id": 1,
+        "chapters_count": 10
+    },
+    {
+        "title": "Advanced REST Framework",
+        "publication_date": "2022-07-15T00:00:00+00:00",
+        "author_id": 2,
+        "chapters_count": 15
+    },
+    {
+        "title": "Mastering Python",
+        "publication_date": "2020-11-01T00:00:00+00:00",
+        "author_id": 3,
+        "chapters_count": 12
+    },
+    {
+        "title": "JavaScript for Beginners",
+        "publication_date": "2021-03-22T00:00:00+00:00",
+        "author_id": 4,
+        "chapters_count": 8
+    },
+    {
+        "title": "Deep Dive into Machine Learning",
+        "publication_date": "2023-01-17T00:00:00+00:00",
+        "author_id": 5,
+        "chapters_count": 20
+    }
+]

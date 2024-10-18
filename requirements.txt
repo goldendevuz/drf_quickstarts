@@ -1,2 +1,4 @@
 django
 djangorestframework
+drf-nested-routers
+django-extensions
