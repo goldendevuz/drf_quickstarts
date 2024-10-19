@@ -11,8 +11,7 @@ serializing data, but sometimes you need to combine many serializers and/or mode
   Documentation: [https://django-rest-multiple-models.readthedocs.org/en/latest/](https://django-rest-multiple-models.readthedocs.io/en/latest/)
 * Source
   Code: [https://github.com/Axiologue/DjangoRestMultipleModels](https://github.com/Axiologue/DjangoRestMultipleModels)
-*
-PyPI: [https://pypi.python.org/pypi/django-rest-multiple-models](https://pypi.python.org/pypi/django-rest-multiple-models)
+* PyPI: [https://pypi.python.org/pypi/django-rest-multiple-models](https://pypi.python.org/pypi/django-rest-multiple-models)
 
 # Installation
 
