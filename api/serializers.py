@@ -1,9 +1,12 @@
-# Serializers define the API representation.
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from rest_framework import serializers
+from drf_compound_fields.fields import ListField
 
+User = get_user_model()
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
+    phone_numbers = ListField(child=serializers.CharField(), allow_empty=True)
+
     class Meta:
         model = User
-        fields = ['url', 'username', 'email', 'is_staff']
+        fields = ['id', 'username', 'email', 'phone_numbers']

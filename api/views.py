@@ -1,9 +1,6 @@
-# ViewSets define the view behavior.
-from django.contrib.auth.models import User
 from rest_framework import viewsets
-
-from api.serializers import UserSerializer
-
+from .models import User
+from .serializers import UserSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
