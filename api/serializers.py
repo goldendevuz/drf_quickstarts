@@ -1,9 +1,14 @@
-# Serializers define the API representation.
-from django.contrib.auth.models import User
 from rest_framework import serializers
 
+from api.models import Play, Poem
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+
+class PlaySerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'is_staff']
+        model = Play
+        fields = ('genre','title','pages')
+
+class PoemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Poem
+        fields = ('title','stanzas')

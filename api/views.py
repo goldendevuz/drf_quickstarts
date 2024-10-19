@@ -1,10 +1,11 @@
-# ViewSets define the view behavior.
-from django.contrib.auth.models import User
-from rest_framework import viewsets
+from drf_multiple_model.views import ObjectMultipleModelAPIView
 
-from api.serializers import UserSerializer
+from api.models import Play, Poem
+from api.serializers import PlaySerializer, PoemSerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class TextAPIView(ObjectMultipleModelAPIView):
+    querylist = [
+        {'queryset': Play.objects.all(), 'serializer_class': PlaySerializer},
+        {'queryset': Poem.objects.filter(style='Sonnet'), 'serializer_class': PoemSerializer},
+    ]
