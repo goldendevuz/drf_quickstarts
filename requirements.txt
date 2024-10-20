@@ -1,2 +1,4 @@
 django
 djangorestframework
+nested-multipart-parser
+Pillow
