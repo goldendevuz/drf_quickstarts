@@ -1,2 +1,4 @@
 django
 djangorestframework
+djangorestframework-msgpack
+django-utils-six
