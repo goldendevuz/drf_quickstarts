@@ -1,2 +1,4 @@
 django
 djangorestframework
+djangorestframework-camel-case
+drf-orjson-renderer
